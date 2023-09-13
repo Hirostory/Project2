@@ -29,9 +29,9 @@ app.use(methodOverride('_method'))
 app.use('/stylemate', styleController)
 app.use(express.static('public'))
 
-// app.get('/', (req, res) => {
-//    res.send('Hello world!')
-// })
+app.get('/', (req, res) => {
+   res.send('Hello world!')
+})
 
 app.listen(PORT, () => {
     console.log(`Server is listening on PORT: ${PORT}`)
