@@ -6,7 +6,10 @@ const Item = require('../models/stylemate.js')
  
 //the index route - GET
 router.get('/', async (req, res) => {
-    res.send('welcome to StyleMate')
+    // res.send('welcome to StyleMate')
+    const foundItem = await Item.find()
+    console.log(foundItem)
+    res.render('index.ejs')
 })
 
 //the new route - GET
