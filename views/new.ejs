@@ -7,5 +7,105 @@
 </head>
 <body>
     <h1>Crete Your Wardrobe</h1>
+
+    <form action="/stylemate" method="POST" >
+       <div>
+            <label for="title_name"> Title Name:</label>
+            <input type="text" id="title_name" name="title[name]"><br>
+
+            <label for="title_img"> Image:</label>
+            <input type="text" id="title_img" name="title[img]"><br>
+       </div><br>
+
+        <!-- TOP -->
+       <div>
+            <div id="topSections" >
+                <h3>Top</h3>
+
+                    <div>
+                        <label for="top_name"> Top Name:</label>
+                        <input type="text" id="top_name" name="top[name]"><br>
+
+                        <label for="top_img"> Top image:</label>
+                        <input type="text" id="top_img" name="top[img]"><br>
+
+                        <label for="top_description"> Description:</label>
+                        <input type="text" id="top_description" name="top[description]"><br>
+
+                        <label for="top_link"> Link:</label>
+                        <input type="text" id="top_link" name="top[link]"><br>
+                    </div><br>
+        </div>
+                <button type="button" id="addTop" >ADD</button>
+       </div>
+        <!-- Bottom -->
+        <div>
+            <div id="bottomSections" >
+                <h3>Bottom</h3>
+    
+                    <div>
+                        <label for="bottom_name"> Bottom Name:</label>
+                        <input type="text" id="bottom_name" name="bottom[name]"><br>
+    
+                        <label for="bottom_img"> Bottom image:</label>
+                        <input type="text" id="bottom_img" name="bottom[img]"><br>
+    
+                        <label for="bottom_description"> Description:</label>
+                        <input type="text" id="bottom_description" name="bottom[description]"><br>
+    
+                        <label for="bottom_link"> Link:</label>
+                        <input type="text" id="bottom_link" name="bottom[link]"><br>
+                    </div><br>     
+            </div>
+                <button type="button" id="addBottom" >ADD</button>
+        </div>
+        <!-- Shoe -->
+        <div>
+            <div id="shoeSections" >
+                <h3>Shoe</h3>
+    
+                    <div>
+                        <label for="shoe_name"> Shoe Name:</label>
+                        <input type="text" id="shoe_name" name="shoe[name]"><br>
+    
+                        <label for="shoe_img"> Shoe image:</label>
+                        <input type="text" id="shoe_img" name="shoe[img]"><br>
+    
+                        <label for="shoe_description"> Description:</label>
+                        <input type="text" id="shoe_description" name="shoe[description]"><br>
+    
+                        <label for="shoe_link"> Link:</label>
+                        <input type="text" id="shoe_link" name="shoe[link]"><br>
+                    </div><br>    
+            </div>
+                <button type="button" id="addShoe" >ADD</button>
+        </div>
+        <!-- Inspiration  -->
+        <div>
+            <div id="inspirationSections" >
+                <h3>Inspiration</h3>
+    
+                    <div>
+                        <label for="inspiration_name"> Inspiration Name:</label>
+                        <input type="text" id="inspiration_name" name="inspiration[name]"><br>
+    
+                        <label for="inspiration_img"> Inspiration image:</label>
+                        <input type="text" id="inspiration_img" name="inspiration[img]"><br>
+    
+                        <label for="inspiration_description"> Description:</label>
+                        <input type="text" id="inspiration_description" name="inspiration[description]"><br>
+    
+                        <label for="inspiration_link"> Link:</label>
+                        <input type="text" id="inspiration_link" name="inspiration[link]"><br>
+                    </div><br>
+    
+                
+            </div>
+                <button type="button" id="addInspiration" >ADD</button><br>
+        </div>
+        <input type="submit" value="submit">
+    </form>
+
+    <script type="text/javascript" src="/js/app.js" ></script>
 </body>
 </html>

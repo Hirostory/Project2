@@ -14,17 +14,22 @@ router.get('/', async (req, res) => {
 
 //the new route - GET
 router.get('/new', (req, res) => {
-    res.send('New page is working')
+    // res.send('New page is working')
+    res.render('new.ejs')
 })
 
 //the show route - GET
 router.get('/:id', async (req, res) => {
-    res.send('show route is working')
+    // res.send('show route is working')
+    // const foundItem = await Item.findById(req.params.id)
+    res.render('show.ejs')
 })
 
 //the edit route - GET
-router.post('/:id/edit', async (req, res) =>{
-    res.send('edit is working')
+router.get('/:id/edit', async (req, res) =>{
+    // res.send('edit is working')
+    // const foundItem = await Item.findById(req.params.id)
+    res.render('edit.ejs')
 })
 
 //the create route - POST
