@@ -23,15 +23,19 @@ router.get('/new', (req, res) => {
 //the show route - GET
 router.get('/:id', async (req, res) => {
     // res.send('show route is working')
-    // const foundItem = await Item.findById(req.params.id)
-    res.render('show.ejs')
+    const foundItem = await Item.findById(req.params.id)
+    res.render('show.ejs', {
+        item: foundItem
+    })
 })
 
 //the edit route - GET
 router.get('/:id/edit', async (req, res) =>{
     // res.send('edit is working')
-    // const foundItem = await Item.findById(req.params.id)
-    res.render('edit.ejs')
+    const foundItem = await Item.findById(req.params.id)
+    res.render('edit.ejs', {
+        item: foundItem
+    })
 })
 
 //the create route - POST
@@ -39,13 +43,23 @@ router.post('/', async (req, res) => {
     try{
         const newItem = await Item.create(req.body)
         res.redirect('/stylemate')
-    } catch (err) {
+    } catch (error) {
         console.log(err)
-        res.status(500).send(err)
+        res.status(500).send(error)
     }
 })
 
 //the update route - PUT
+router.put('/:id', async (req, res) => {
+    try{
+        const updatedItem = await Item.findByIdAndUpdate
+        (req.params.id, req.body, { new: true })
+        res.redirect(`/store/${req.params.id}`)
+    } catch (error) {
+        console.log("ERROR ON DELETE REQUEST: ", err)
+        res.status(500).send(error)
+    }
+})
 
 //the delete route - DELETE
 
