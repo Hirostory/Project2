@@ -44,7 +44,7 @@ router.post('/', async (req, res) => {
         const newItem = await Item.create(req.body)
         res.redirect('/stylemate')
     } catch (error) {
-        console.log(err)
+        console.log(error)
         res.status(500).send(error)
     }
 })
@@ -56,11 +56,21 @@ router.put('/:id', async (req, res) => {
         (req.params.id, req.body, { new: true })
         res.redirect(`/store/${req.params.id}`)
     } catch (error) {
-        console.log("ERROR ON DELETE REQUEST: ", err)
+        console.log("ERROR ON UPDATE REQUEST: ", error)
         res.status(500).send(error)
     }
 })
 
 //the delete route - DELETE
+router.delete('/:id', async (req, res) => {
+    try{
+        const item = await Item.findByIdAndDelete(req.params.id)
+        console.log(`Deleted Item: ${item}`)
+        res.redirect('/stylemate')
+    } catch (error) {
+        console.log("ERROR ON DELETE REQUEST: ", error)
+        res.status(500).send(error)
+    }
+})
 
 module.exports = router
