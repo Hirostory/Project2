@@ -29,8 +29,9 @@ app.use(methodOverride('_method'))
 app.use('/stylemate', styleController)
 app.use(express.static('public'))
 
+//Origin starter home page in heroku 
 app.get('/', (req, res) => {
-   res.send('Hello world!')
+   res.redirect('/stylemate')
 })
 
 app.listen(PORT, () => {
