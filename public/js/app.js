@@ -1,5 +1,5 @@
-
-document.addEventListener("DOMContentLoaded", () => {
+//crating a function that a user can add more items in the create page. i want this app to be flexibale when creating a wardrobe - update 9/14 - this i was really confusing lol had to reread some notes and go through my old project to remind myself with DOM manuplaction
+document.addEventListener("DOMContentLoaded", () => { // "DOMcontentLoaded" is a event where it waits fro the content to run befroe runnning Javascript, kinda like the window.onload 
     const addSection = (sectionType) => {
         const container = document.querySelector(`#${sectionType}Sections`)
         const sectionCount = container.querySelectorAll(`.${sectionType}`).length
@@ -34,21 +34,5 @@ document.addEventListener("DOMContentLoaded", () => {
     addBottomButton.addEventListener("click", () => addSection("bottom"))
     addShoeButton.addEventListener("click", () => addSection("shoe"))
     addInspirationButton.addEventListener("click", () => addSection("inspiration"))
-
-    // if (addTopButton) {
-    //     addTopButton.addEventListener("click", () => addSection("top"));
-    // }
-
-    // if (addBottomButton) {
-    //     addBottomButton.addEventListener("click", () => addSection("bottom"));
-    // }
-
-    // if (addShoeButton) {
-    //     addShoeButton.addEventListener("click", () => addSection("shoe"));
-    // }
-
-    // if (addInspirationButton) {
-    //     addInspirationButton.addEventListener("click", () => addSection("inspiration"));
-    // }
 })
 
