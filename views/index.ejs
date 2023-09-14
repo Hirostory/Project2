@@ -7,5 +7,16 @@
 </head>
 <body>
     <h1>StyleMate</h1>
+    <nav>
+        <a href="/stylemate/new"> Create a Wardrobe</a>
+    </nav>
+    <ul>
+        <% for(let i = 0; i < item.length; i++) { %>
+        <li>
+            <h2><%= item[i].title.name %> </h2>
+            <img src=<%= item[i].title.img %> alt="Cover pic">
+        </li>
+        <% } %>
+    </ul>
 </body>
 </html>
