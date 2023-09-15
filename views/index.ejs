@@ -14,7 +14,9 @@
         <% for(let i = 0; i < item.length; i++) { %>
         <li>
             <h2><%= item[i].title.name %> </h2>
-            <img src=<%= item[i].title.img %> alt="Cover pic">
+            <a href="/stylemate/<%=item[i].id %>">
+                <img src=<%= item[i].title.img %> alt="Cover pic">
+            </a>
         </li>
         <% } %>
     </ul>

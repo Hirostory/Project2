@@ -52,9 +52,8 @@ router.post('/', async (req, res) => {
 //the update route - PUT
 router.put('/:id', async (req, res) => {
     try{
-        const updatedItem = await Item.findByIdAndUpdate
-        (req.params.id, req.body, { new: true })
-        res.redirect(`/store/${req.params.id}`)
+        const updatedItem = await Item.findByIdAndUpdate(req.params.id, req.body, {new:true})
+        res.redirect(`/stylemate/${req.params.id}`)
     } catch (error) {
         console.log("ERROR ON UPDATE REQUEST: ", error)
         res.status(500).send(error)

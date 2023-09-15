@@ -7,6 +7,34 @@
 </head>
 <body>
     <h1>Current Wardrobe</h1>
-    
+    <div>
+        <img src= <%= item.top.img %> alt="item">
+        <h2><%= item.top.name %></h2>
+        <p><%= item.top.description %></p>
+        <a href=<%= item.top.link %>>LINK</a>
+     </div>
+     <div>
+        <img src= <%= item.bottom.img %> alt="item">
+        <h2><%= item.bottom.name %></h2>
+        <p><%= item.bottom.description %></p>
+        <a href=<%= item.bottom.link %>>LINK</a>
+     </div>
+     <div>
+        <img src= <%= item.shoe.img %> alt="item">
+        <h2><%= item.shoe.name %></h2>
+        <p><%= item.shoe.description %></p>
+        <a href=<%= item.shoe.link %>>LINK</a>
+     </div>
+     <div>
+        <img src= <%= item.inspiration.img %> alt="item">
+        <h2><%= item.inspiration.name %></h2>
+        <p><%= item.inspiration.description %></p>
+        <a href=<%= item.inspiration.link %>>LINK</a>
+     </div>
+
+     <div>
+        <a href="/stylemate/<%=item.id%>/edit">EDIT</a>
+        <a href="/stylemate">BACK</a>
+     </div>
 </body>
 </html>

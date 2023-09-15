@@ -7,5 +7,102 @@
 </head>
 <body>
     <h1>Edit wardrobe</h1>
+        <form action="/stylemate/<%=item.id%>?_method=PUT" method="POST" >
+            <div>
+                <label for="edit_title_name"> Title Name:</label>
+                <input type="text" id="title_name" name="title[name]" value="<%=item.title.name%>" ><br>
+    
+                <label for="adit_title_img"> Image:</label>
+                <input type="text" id="title_img" name="title[img]" value="<%=item.title.img%>" ><br>
+            </div><br>
+    
+            <!-- TOP -->
+            <div>
+                <div id="topSections" >
+                    <h3>Top</h3>
+    
+                        <div>
+                            <label for="edit_top_name"> Top Name:</label>
+                            <input type="text" id="top_name" name="top[name]" value="<%=item.top.name%>" ><br>
+    
+                            <label for="edit_top_img"> Top image:</label>
+                            <input type="text" id="top_img" name="top[img]" value="<%=item.top.img%>" ><br>
+    
+                            <label for="edit_top_description"> Description:</label>
+                            <input type="text" id="top_description" name="top[description]" value="<%=item.top.description%>" ><br>
+    
+                            <label for="edit_top_link"> Link:</label>
+                            <input type="text" id="top_link" name="top[link]" value="<%=item.top.link%>" ><br>
+                        </div><br>
+            </div>
+                    <button type="button" id="addTop" >ADD</button>
+            </div>
+            <!-- Bottom -->
+            <div>
+                <div id="bottomSections" >
+                    <h3>Bottom</h3>
+        
+                        <div>
+                            <label for="edit_bottom_name"> Bottom Name:</label>
+                            <input type="text" id="bottom_name" name="bottom[name]" value="<%=item.bottom.name%>" ><br>
+        
+                            <label for="edit_bottom_img"> Bottom image:</label>
+                            <input type="text" id="bottom_img" name="bottom[img]" value="<%=item.bottom.img%>" ><br>
+        
+                            <label for="edit_bottom_description"> Description:</label>
+                            <input type="text" id="bottom_description" name="bottom[description]" value="<%=item.bottom.description%>" ><br>
+        
+                            <label for="edit_bottom_link"> Link:</label>
+                            <input type="text" id="bottom_link" name="bottom[link]" value="<%=item.bottom.link%>" ><br>
+                        </div><br>     
+                </div>
+                    <button type="button" id="addBottom" >ADD</button>
+            </div>
+            <!-- Shoe -->
+            <div>
+                <div id="shoeSections" >
+                    <h3>Shoe</h3>
+        
+                        <div>
+                            <label for="edit_shoe_name"> Shoe Name:</label>
+                            <input type="text" id="shoe_name" name="shoe[name]" value="<%=item.shoe.name%>" ><br>
+        
+                            <label for="edit_shoe_img"> Shoe image:</label>
+                            <input type="text" id="shoe_img" name="shoe[img]" value="<%=item.shoe.img%>" ><br>
+        
+                            <label for="edit_shoe_description"> Description:</label>
+                            <input type="text" id="shoe_description" name="shoe[description]" value="<%=item.shoe.description%>" ><br>
+        
+                            <label for="edit_shoe_link"> Link:</label>
+                            <input type="text" id="shoe_link" name="shoe[link]" value="<%=item.shoe.link%>" ><br>
+                        </div><br>    
+                </div>
+                    <button type="button" id="addShoe" >ADD</button>
+            </div>
+            <!-- Inspiration  -->
+            <div>
+                <div id="inspirationSections" >
+                    <h3>Inspiration</h3>
+        
+                        <div>
+                            <label for="edit_inspiration_name"> Inspiration Name:</label>
+                            <input type="text" id="inspiration_name" name="inspiration[name]" value="<%=item.inspiration.name%>" ><br>
+        
+                            <label for="edit_inspiration_img"> Inspiration image:</label>
+                            <input type="text" id="inspiration_img" name="inspiration[img]" value="<%=item.inspiration.img%>" ><br>
+        
+                            <label for="edit_inspiration_description"> Description:</label>
+                            <input type="text" id="inspiration_description" name="inspiration[description]" value="<%=item.inspiration.description%>" ><br>
+        
+                        </div><br>
+        
+                    
+                </div>
+                    <button type="button" id="addInspiration" >ADD</button><br>
+            </div>
+            <input type="submit" value="submit">
+        </form>
+ 
+     <script type="text/javascript" src="/js/app.js" ></script>
 </body>
 </html>
