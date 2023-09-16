@@ -41,7 +41,16 @@ router.get('/:id/edit', async (req, res) =>{
 //the create route - POST
 router.post('/', async (req, res) => {
     try{
-        const newItem = await Item.create(req.body)
+        // const newItem = await Item.create(req.body)
+        const { title, top, bottom, shoe, inspiration } = req.body
+        
+        const newItem = await Item.create({
+            title,
+            top,
+            bottom,
+            shoe,
+            inspiration
+        })
         res.redirect('/stylemate')
     } catch (error) {
         console.log(error)
@@ -52,7 +61,21 @@ router.post('/', async (req, res) => {
 //the update route - PUT
 router.put('/:id', async (req, res) => {
     try{
-        const updatedItem = await Item.findByIdAndUpdate(req.params.id, req.body, {new:true})
+        // const updatedItem = await Item.findByIdAndUpdate(req.params.id, req.body, {new:true})
+        const { title, top, bottom, shoe, inspiration } = req.body
+
+        const updatedItem = await Item.findByIdAndUpdate(
+            req.params.id,
+            {
+                title,
+                top,
+                bottom,
+                shoe,
+                inspiration
+            },
+            { new: true }
+        )
+        console.log(updatedItem)
         res.redirect(`/stylemate/${req.params.id}`)
     } catch (error) {
         console.log("ERROR ON UPDATE REQUEST: ", error)

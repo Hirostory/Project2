@@ -34,6 +34,7 @@ app.get('/', (req, res) => {
    res.redirect('/stylemate')
 })
 
+
 app.listen(PORT, () => {
     console.log(`Server is listening on PORT: ${PORT}`)
 })

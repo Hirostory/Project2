@@ -17,7 +17,11 @@
             <a href="/stylemate/<%=item[i].id %>">
                 <img src=<%= item[i].title.img %> alt="Cover pic">
             </a>
+            <img src=<%= item[i].top.img %> alt="">
         </li>
+        <form action="/stylemate/<%=item[i].id %>?_method=DELETE" method="POST" >
+            <input type="submit" value="DELETE">
+        </form>
         <% } %>
     </ul>
 </body>
