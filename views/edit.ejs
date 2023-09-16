@@ -7,33 +7,34 @@
 </head>
 <body>
     <h1>Edit wardrobe</h1>
-        <form action="/stylemate/<%=item.id%>?_method=PUT" method="POST" >
+        <form action="/stylemate/<%=wardrobe.id%>?_method=PUT" method="POST" >
             <div>
                 <label for="edit_title_name"> Title Name:</label>
-                <input type="text" id="title_name" name="title[name]" value="<%=item.title.name%>" ><br>
+                <input type="text" id="title_name" name="title[name]" value="<%=wardrobe.title.name%>" ><br>
     
                 <label for="adit_title_img"> Image:</label>
-                <input type="text" id="title_img" name="title[img]" value="<%=item.title.img%>" ><br>
+                <input type="text" id="title_img" name="title[img]" value="<%=wardrobe.title.img%>" ><br>
             </div><br>
     
             <!-- TOP -->
             <div>
                 <div id="topSections" >
                     <h3>Top</h3>
-    
+                    <% for (let i = 0; i < wardrobe.tops.length; i++) { %>
                         <div>
                             <label for="edit_top_name"> Top Name:</label>
-                            <input type="text" id="top_name" name="top[name]" value="<%=item.top.name%>" ><br>
+                            <input type="text" id="top_name" name="tops[<%= i %>][name]" value="<%=wardrobe.tops[i].name%>" ><br>
     
                             <label for="edit_top_img"> Top image:</label>
-                            <input type="text" id="top_img" name="top[img]" value="<%=item.top.img%>" ><br>
+                            <input type="text" id="top_img" name="tops[<%= i %>][img]" value="<%=wardrobe.tops[i].img%>" ><br>
     
                             <label for="edit_top_description"> Description:</label>
-                            <input type="text" id="top_description" name="top[description]" value="<%=item.top.description%>" ><br>
+                            <input type="text" id="top_description" name="tops[<%= i %>][description]" value="<%=wardrobe.tops[i].description%>" ><br>
     
                             <label for="edit_top_link"> Link:</label>
-                            <input type="text" id="top_link" name="top[link]" value="<%=item.top.link%>" ><br>
+                            <input type="text" id="top_link" name="tops[<%= i %>][link]" value="<%=wardrobe.tops[i].link%>" ><br>
                         </div><br>
+                    <% } %>  
             </div>
                     <button type="button" id="addTop" >ADD</button>
             </div>
@@ -41,65 +42,66 @@
             <div>
                 <div id="bottomSections" >
                     <h3>Bottom</h3>
-        
+                    <% for (let i = 0; i < wardrobe.bottoms.length; i++) { %>
                         <div>
-                            <label for="edit_bottom_name"> Bottom Name:</label>
-                            <input type="text" id="bottom_name" name="bottom[name]" value="<%=item.bottom.name%>" ><br>
-        
-                            <label for="edit_bottom_img"> Bottom image:</label>
-                            <input type="text" id="bottom_img" name="bottom[img]" value="<%=item.bottom.img%>" ><br>
-        
+                            <label for="edit_bottom_name"> bottom Name:</label>
+                            <input type="text" id="bottom_name" name="bottoms[<%= i %>][name]" value="<%=wardrobe.bottoms[i].name%>" ><br>
+    
+                            <label for="edit_bottom_img"> bottom image:</label>
+                            <input type="text" id="bottom_img" name="bottoms[<%= i %>][img]" value="<%=wardrobe.bottoms[i].img%>" ><br>
+    
                             <label for="edit_bottom_description"> Description:</label>
-                            <input type="text" id="bottom_description" name="bottom[description]" value="<%=item.bottom.description%>" ><br>
-        
+                            <input type="text" id="bottom_description" name="bottoms[<%= i %>][description]" value="<%=wardrobe.bottoms[i].description%>" ><br>
+    
                             <label for="edit_bottom_link"> Link:</label>
-                            <input type="text" id="bottom_link" name="bottom[link]" value="<%=item.bottom.link%>" ><br>
-                        </div><br>     
+                            <input type="text" id="bottom_link" name="bottoms[<%= i %>][link]" value="<%=wardrobe.bottoms[i].link%>" ><br>
+                        </div><br>
+                    <% } %>  
                 </div>
                     <button type="button" id="addBottom" >ADD</button>
             </div>
             <!-- Shoe -->
-            <div>
-                <div id="shoeSections" >
-                    <h3>Shoe</h3>
-        
-                        <div>
-                            <label for="edit_shoe_name"> Shoe Name:</label>
-                            <input type="text" id="shoe_name" name="shoe[name]" value="<%=item.shoe.name%>" ><br>
-        
-                            <label for="edit_shoe_img"> Shoe image:</label>
-                            <input type="text" id="shoe_img" name="shoe[img]" value="<%=item.shoe.img%>" ><br>
-        
-                            <label for="edit_shoe_description"> Description:</label>
-                            <input type="text" id="shoe_description" name="shoe[description]" value="<%=item.shoe.description%>" ><br>
-        
-                            <label for="edit_shoe_link"> Link:</label>
-                            <input type="text" id="shoe_link" name="shoe[link]" value="<%=item.shoe.link%>" ><br>
-                        </div><br>    
-                </div>
-                    <button type="button" id="addShoe" >ADD</button>
+            <div id="bottomSections" >
+                <h3>Bottom</h3>
+                <% for (let i = 0; i < wardrobe.shoes.length; i++) { %>
+                    <div>
+                        <label for="edit_shoe_name"> shoe Name:</label>
+                        <input type="text" id="shoe_name" name="shoes[<%= i %>][name]" value="<%=wardrobe.shoes[i].name%>" ><br>
+
+                        <label for="edit_shoe_img"> shoe image:</label>
+                        <input type="text" id="shoe_img" name="shoes[<%= i %>][img]" value="<%=wardrobe.shoes[i].img%>" ><br>
+
+                        <label for="edit_shoe_description"> Description:</label>
+                        <input type="text" id="shoe_description" name="shoes[<%= i %>][description]" value="<%=wardrobe.shoes[i].description%>" ><br>
+
+                        <label for="edit_shoe_link"> Link:</label>
+                        <input type="text" id="shoe_link" name="shoes[<%= i %>][link]" value="<%=wardrobe.shoes[i].link%>" ><br>
+                    </div><br>
+                <% } %>  
             </div>
+                <button type="button" id="addBottom" >ADD</button>
+        </div>
             <!-- Inspiration  -->
             <div>
                 <div id="inspirationSections" >
                     <h3>Inspiration</h3>
-        
+                    <% for (let i = 0; i < wardrobe.inspirations.length; i++) { %>
                         <div>
-                            <label for="edit_inspiration_name"> Inspiration Name:</label>
-                            <input type="text" id="inspiration_name" name="inspiration[name]" value="<%=item.inspiration.name%>" ><br>
-        
-                            <label for="edit_inspiration_img"> Inspiration image:</label>
-                            <input type="text" id="inspiration_img" name="inspiration[img]" value="<%=item.inspiration.img%>" ><br>
-        
+                            <label for="edit_inspiration_name"> inspiration Name:</label>
+                            <input type="text" id="inspiration_name" name="inspirations[<%= i %>][name]" value="<%=wardrobe.inspirations[i].name%>" ><br>
+    
+                            <label for="edit_inspiration_img"> inspiration image:</label>
+                            <input type="text" id="inspiration_img" name="inspirations[<%= i %>][img]" value="<%=wardrobe.inspirations[i].img%>" ><br>
+    
                             <label for="edit_inspiration_description"> Description:</label>
-                            <input type="text" id="inspiration_description" name="inspiration[description]" value="<%=item.inspiration.description%>" ><br>
-        
+                            <input type="text" id="inspiration_description" name="inspirations[<%= i %>][description]" value="<%=wardrobe.inspirations[i].description%>" ><br>
                         </div><br>
-        
-                    
+                    <% } %>  
                 </div>
+            </div>
                     <button type="button" id="addInspiration" >ADD</button><br>
             </div>
+           
             <input type="submit" value="submit">
         </form>
  

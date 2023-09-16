@@ -11,15 +11,15 @@
         <a href="/stylemate/new"> Create a Wardrobe</a>
     </nav>
     <ul>
-        <% for(let i = 0; i < item.length; i++) { %>
+        <% for(let i = 0; i < wardrobes.length; i++) { %>
         <li>
-            <h2><%= item[i].title.name %> </h2>
-            <a href="/stylemate/<%=item[i].id %>">
-                <img src=<%= item[i].title.img %> alt="Cover pic">
+            <h2><%= wardrobes[i].title.name %> </h2>
+            <a href="/stylemate/<%=wardrobes[i].id %>">
+                <img src=<%= wardrobes[i].title.img %> alt="Cover pic">
             </a>
-            <img src=<%= item[i].top.img %> alt="">
+            <!-- <img src=<%= wardrobes[i].tops[0].img %> alt=""> -->
         </li>
-        <form action="/stylemate/<%=item[i].id %>?_method=DELETE" method="POST" >
+        <form action="/stylemate/<%=wardrobes[i].id %>?_method=DELETE" method="POST" >
             <input type="submit" value="DELETE">
         </form>
         <% } %>

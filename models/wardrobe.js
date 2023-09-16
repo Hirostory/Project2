@@ -2,36 +2,36 @@ const mongoose = require('mongoose')
 
 
 //created a model 
-const itemSchema = new mongoose.Schema({
+const wardrobeSchema = new mongoose.Schema({
     title: {
         name: String,
         img: String, 
     },
-    top: {
+    tops: [{
         name: String,
         img: String,
         description: String,
         link: String, 
-    },
-    bottom: {
+    }],
+    bottoms: [{
         name: String,
         img: String,
         description: String,
         link: String, 
-    },
-    shoe: {
+    }],
+    shoes: [{
         name: String,
         img: String,
         description: String,
         link: String, 
-    },
-    inspiration: {
+    }],
+    inspirations: [{
         name: String,
         img: String,
         description: String,
-    }
+    }]
 })
 
-const Item = mongoose.model("Item", itemSchema)
+const Wardrobe = mongoose.model("Wardrobe", wardrobeSchema)
 
-module.exports = Item
+module.exports = Wardrobe
