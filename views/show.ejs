@@ -9,6 +9,7 @@
     <h1>Current Wardrobe</h1>
    
      <div>
+        <h1>TOPS</h1>
         <% for(let i = 0; i < wardrobe.tops.length; i++) { %>
             <div>
                 <img src= <%= wardrobe.tops[i].img %>>
@@ -16,11 +17,12 @@
                 <p><%= wardrobe.tops[i].description %></p>
                 <a href=<%= wardrobe.tops[i].link %>>LINK</a>
              </div>
-             <a href="/tops/show.ejs">ADD TOP</a>
+             
         <% } %>
-        
+        <a href="/top/<%= wardrobe.id %>">View Tops</a>
      </div>
      <div>
+        <h1>BOTTOM</h1>
         <% for(let i = 0; i < wardrobe.bottoms.length; i++) { %>
             <div>
                 <img src= <%= wardrobe.bottoms[i].img %>>

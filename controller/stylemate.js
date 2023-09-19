@@ -14,9 +14,11 @@ const Inspiration = require('../models/inspiration.js')
 router.get('/', async (req, res) => {
     // res.send('welcome to StyleMate')
     const foundWardrobes = await Wardrobe.find()
+    const foundTops = await Top.find()
     console.log(foundWardrobes)
     res.render('index.ejs', {
-        wardrobes: foundWardrobes
+        wardrobes: foundWardrobes,
+        top: foundTops
     })
 })
 
