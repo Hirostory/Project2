@@ -107,7 +107,7 @@ router.put('/:id', async (req, res) => {
         link: req.body['tops[link]']
        }, {new:true})
        console.log(updatedTop)
-        res.redirect(`/top/${topId}`)
+        res.redirect(`/top`)
     } catch (error) {
         console.log("ERROR ON UPDATE REQUEST: ", error)
         res.status(500).send(error)
