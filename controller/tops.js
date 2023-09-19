@@ -49,13 +49,14 @@ router.get('/:id', async (req, res) => {
 router.get('/:topId/edit', async (req, res) => {
     try {
         const topId = req.params.topId
-
+        console.log(topId)
         const foundTop = await Top.findById(topId)
         const foundWardrobe = await Wardrobe.findById(foundTop.wardrobe)
-        
+
         res.render('tops/edit.ejs', {
             wardrobe: foundWardrobe,
-            top: foundTop
+            top: foundTop,
+            topId: topId
         })
     } catch (error) {
         console.log("ERROR ON EDIT REQUEST: ", error)
@@ -97,21 +98,34 @@ router.post('/:id/add', async (req, res) => {
 //PUT route 
 router.put('/:id', async (req, res) => {
     try {
-        const topId = req.params.topId
-
-        const foundTop = await Top.findById(topId)
-
-        foundTop.name = req.body['tops[name]']
-        foundTop.img = req.body['tops[img]']
-        foundTop.description = req.body['tops[description]']
-        foundTop.link = req.body['tops[link]']
-
-        await foundTop.save()
-
-        res.redirect(`/tops/${foundTop.wardrobe}`)
+        const topId = req.params.id
+        console.log(topId)
+       const updatedTop = await Top.findByIdAndUpdate(topId, {
+        name: req.body['tops[name]'],
+        img: req.body['tops[img]'],
+        description: req.body['tops[description]'],
+        link: req.body['tops[link]']
+       }, {new:true})
+       console.log(updatedTop)
+        res.redirect(`/top/${topId}`)
     } catch (error) {
         console.log("ERROR ON UPDATE REQUEST: ", error)
         res.status(500).send(error)
     }
 })
+
+//DELETE route
+router.delete('/:id', async (req, res) => {
+    try {
+        const topId = req.params.id
+        const top = await Top.findByIdAndDelete(topId)
+        console.log("Deleted Top: " + top)
+        res.redirect(`/top`)
+    } catch (error){
+        console.log("ERROR ON DELETE REQUEST: ", error)
+        res.status(500).send(error)
+    }
+})
+
+
 module.exports = router
