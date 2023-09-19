@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>BOTTOM INDEX</h1>
+    <ul>
+        <% for(let i =0; i < wardrobe.length; i++) { %>
+            <li>
+                <h3><%= wardrobe[i].title.name %></h3>
+                <a href="/bottom/<%=wardrobe[i].id %>"> 
+                    <img src=<%= wardrobe[i].title.img %> alt="">
+                </a>
+        <% } %>
+                <form action="/bottom/<%=bottom.id %>?_method=DELETE" method="POST" >
+                <input type="submit" value="DELETE"></form>
+            </li>
+        
+    </ul>
+</body>
+</html>

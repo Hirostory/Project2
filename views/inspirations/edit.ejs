@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <H1>Update Inspiration</H1>
+        <div>
+            <div id="inspirationSections" >
+
+                <form action="/inspiration/<%= inspiration._id %>?_method=PUT" method="POST">
+                        <div>
+                            <label for="name">Inspiration Name:</label>
+                            <input type="text" id="name" name="name" value="<%= inspiration.name %>"><br>
+        
+                            <label for="img">Inspiration image:</label>
+                            <input type="text" id="img" name="img" value="<%= inspiration.img %>"><br>
+        
+                            <label for="description">Description:</label>
+                            <input type="text" id="description" name="description" value="<%= inspiration.description %>"><br>
+        
+                            <label for="link">Link:</label>
+                            <input type="text" id="link" name="link" value="<%= inspiration.link %>"><br>
+        
+                            <input type="submit" value="Save Changes">
+                        </div><br>
+                    </form>
+                    </form>
+            </div>
+    </div>
+</body>
+</html>

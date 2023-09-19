@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <H1>Add Bottom</H1>
+        <div>
+            <div id="bottomSections" >
+
+                    <form action="/bottom/<%= id %>/add" method="POST">
+                        <div>
+                            <label for="name"> bottom Name:</label>
+                            <input type="text" id="name" name="name"><br>
+    
+                            <label for="img"> bottom image:</label>
+                            <input type="text" id="img" name="img"><br>
+    
+                            <label for="description"> Description:</label>
+                            <input type="text" id="description" name="description"><br>
+    
+                            <label for="link"> Link:</label>
+                            <input type="text" id="link" name="link"><br>
+    
+                            <input type="submit" value="ADD">
+                        </div><br>
+                    </form>
+            </div>
+    </div>
+</body>
+</html>

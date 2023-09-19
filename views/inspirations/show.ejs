@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>INSPIRATION IN WARDROBE <%= wardrobe.title.name %></h1>
+    <div>
+        <% for(let i = 0; i < wardrobe.inspirations.length; i++) { %>
+            <div>
+                <img src="<%= wardrobe.inspirations[i].img %>" >
+                <h2><%= wardrobe.inspirations[i].name %></h2>
+                <p><%= wardrobe.inspirations[i].description %></p>
+                <a href="<%= wardrobe.inspirations[i].link %>">LINK</a>
+            </div>
+            <a href="/inspiration/<%= wardrobe.inspirations[i]._id %>/edit">update</a>
+            <form action="/inspiration/<%= wardrobe.inspirations[i].id%>?_method=DELETE" method="POST">
+                <input type="submit" value="DELETE">
+            </form>
+        <% } %>
+        <a href="/inspiration/<%= id %>/new"> Add inspiration</a>
+    </div>
+
+</body>
+</html>
