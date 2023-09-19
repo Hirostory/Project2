@@ -46,17 +46,12 @@ router.get('/:id', async (req, res) => {
 })
 
 //EDIT Route
-router.get('/:topId/edit', async (req, res) => {
+router.get('/:id/edit', async (req, res) => {
     try {
-        const topId = req.params.topId
-        console.log(topId)
-        const foundTop = await Top.findById(topId)
-        const foundWardrobe = await Wardrobe.findById(foundTop.wardrobe)
+        const foundTop = await Top.findById(req.params.id)
 
         res.render('tops/edit.ejs', {
-            wardrobe: foundWardrobe,
-            top: foundTop,
-            topId: topId
+            top: foundTop
         })
     } catch (error) {
         console.log("ERROR ON EDIT REQUEST: ", error)
@@ -100,13 +95,14 @@ router.put('/:id', async (req, res) => {
     try {
         const topId = req.params.id
         console.log(topId)
-       const updatedTop = await Top.findByIdAndUpdate(topId, {
-        name: req.body['tops[name]'],
-        img: req.body['tops[img]'],
-        description: req.body['tops[description]'],
-        link: req.body['tops[link]']
-       }, {new:true})
-       console.log(updatedTop)
+        const topToUpdate = {
+            name: req.body.name,
+            img: req.body.img,
+            description: req.body.description,
+            link: req.body.link
+        }
+       const updatedTop = await Top.findByIdAndUpdate(topId, topToUpdate, {new:true})
+       console.log("UPDATED TOP: " + updatedTop)
         res.redirect(`/top`)
     } catch (error) {
         console.log("ERROR ON UPDATE REQUEST: ", error)

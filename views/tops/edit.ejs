@@ -10,19 +10,19 @@
         <div>
             <div id="topSections" >
 
-                <form action="/top/<%= top.id %>?_method=PUT" method="POST">
+                <form action="/top/<%= top._id %>?_method=PUT" method="POST">
                         <div>
-                            <label for="tops[name]">Top Name:</label>
-                            <input type="text" id="tops[name]" name="tops[name]" value="<%= top.name %>"><br>
+                            <label for="name">Top Name:</label>
+                            <input type="text" id="name" name="name" value="<%= top.name %>"><br>
         
-                            <label for="tops[img]">Top image:</label>
-                            <input type="text" id="tops[img]" name="tops[img]" value="<%= top.img %>"><br>
+                            <label for="img">Top image:</label>
+                            <input type="text" id="img" name="img" value="<%= top.img %>"><br>
         
-                            <label for="tops[description]">Description:</label>
-                            <input type="text" id="tops[description]" name="tops[description]" value="<%= top.description %>"><br>
+                            <label for="description">Description:</label>
+                            <input type="text" id="description" name="description" value="<%= top.description %>"><br>
         
-                            <label for="tops[link]">Link:</label>
-                            <input type="text" id="tops[link]" name="tops[link]" value="<%= top.link %>"><br>
+                            <label for="link">Link:</label>
+                            <input type="text" id="link" name="link" value="<%= top.link %>"><br>
         
                             <input type="submit" value="Save Changes">
                         </div><br>
