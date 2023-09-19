@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 
 //created a model 
-const topSchema = new mongoose.Schema({
+const inspirationSchema = new mongoose.Schema({
     name: String,
     img: String,
     description: String,
@@ -12,9 +12,6 @@ const topSchema = new mongoose.Schema({
         ref: "Wardrobe"
     }
 })
-const Top = mongoose.model("Top", topSchema)
+const Inspiration = mongoose.model("Inspiration", inspirationSchema)
 
-module.exports = Top
-
-
-//one to many relationship - look it up 
+module.exports = Inspiration

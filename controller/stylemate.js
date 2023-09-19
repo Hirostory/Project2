@@ -2,7 +2,13 @@ const express = require('express') //connecting to express
 const router = express.Router()
 
 //conect my Schema to this file
+const { default: mongoose } = require('mongoose')
 const Wardrobe = require('../models/wardrobe.js')
+const Top = require('../models/top.js')
+const Bottom = require('../models/bottom.js')
+const Shoe = require('../models/shoe.js')
+const Inspiration = require('../models/inspiration.js')
+
  
 //the index route - GET
 router.get('/', async (req, res) => {
@@ -23,10 +29,21 @@ router.get('/new', (req, res) => {
 //the show route - GET
 router.get('/:id', async (req, res) => {
     // res.send('show route is working')
-    const foundWardrobe = await Wardrobe.findById(req.params.id)
-    res.render('show.ejs', {
-        wardrobe: foundWardrobe
-    })
+    try {
+        const foundWardrobe = await Wardrobe.findById(req.params.id)
+        .populate('tops')
+        .populate('bottoms')
+        .populate('shoes')
+        .populate('inspirations')
+        .exec()
+
+        res.render('show.ejs', {
+            wardrobe: foundWardrobe
+        })
+    } catch (error) {
+        console.log("ERROR ON SHOW REQUEST: ", error)
+        res.status(500).send(error)
+    }
 })
 
 //the edit route - GET
@@ -38,10 +55,29 @@ router.get('/:id/edit', async (req, res) =>{
     })
 })
 
-//the create route - POST
+//the create route - POST - redirect to the main page... we'll see lmao 
 router.post('/', async (req, res) => {
+
+    const title = req.body.title;
+    const tops = req.body.tops;
+    const bottoms = req.body.bottoms;
+    const shoes = req.body.shoes;
+    const inspirations = req.body.inspirations;
+
     try{
-        const newWardrobe = await Wardrobe.create(req.body)
+        // creating new tops, bottoms, shoes, and inspirations
+        const addTops = await Top.create(tops)
+        const addBottoms = await Bottom.create(bottoms)
+        const addShoes = await Shoe.create(shoes)
+        const addInspiration = await Inspiration.create(inspirations)
+        //creating a wardrobe 
+        const newWardrobe = await Wardrobe.create({
+            title,
+            tops: addTops,
+            bottoms: addBottoms,
+            shoes: addShoes,
+            inspirations: addInspiration
+        })
         res.redirect('/stylemate')
         console.log(newWardrobe)
     } catch (error) {
@@ -54,20 +90,17 @@ router.post('/', async (req, res) => {
 router.put('/:id', async (req, res) => {
     try{
         console.log("UPDATE REQ.BODY:", req.body)
-        const updatedWardrobe = await Wardrobe.findByIdAndUpdate(req.params.id, req.body, {new:true}) // 
-        // const { title, top, bottom, shoe, inspiration } = req.body
-
-        // const updatedWardrobe = await Wardrobe.findByIdAndUpdate(
-        //     req.params.id,
-        //     {
-        //         title,
-        //         top,
-        //         bottom,
-        //         shoe,
-        //         inspiration
-        //     },
-        //     { new: true }
-        // )
+        // const updatedWardrobe = await Wardrobe.findByIdAndUpdate(req.params.id, req.body, {new:true})
+        const updatedWardrobe = await Wardrobe.findByIdAndUpdate(req.params.id,
+            {
+                title: req.body.title,
+                tops: req.body.tops.map(top => mongoose.Types.ObjectId(top)),
+                bottoms: req.body.bottoms.map(bottom => mongoose.Types.ObjectId(bottom)), 
+                shoes: req.body.shoes.map(shoe => mongoose.Types.ObjectId(shoe)), 
+                inspirations: req.body.inspirations.map(inspiration => mongoose.Types.ObjectId(inspiration))
+            }, 
+            {new: true}
+        )
         console.log("UPDATED WARDROBE:", updatedWardrobe)
         res.redirect(`/stylemate/${req.params.id}`)
     } catch (error) {

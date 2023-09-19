@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-
+const Schema = mongoose.Schema
 
 //created a model 
 const wardrobeSchema = new mongoose.Schema({
@@ -8,27 +8,20 @@ const wardrobeSchema = new mongoose.Schema({
         img: String, 
     },
     tops: [{
-        name: String,
-        img: String,
-        description: String,
-        link: String, 
+         type: mongoose.Types.ObjectId,
+         ref: "Top"
     }],
     bottoms: [{
-        name: String,
-        img: String,
-        description: String,
-        link: String, 
+        type: mongoose.Types.ObjectId,
+        ref: "Bottom"
     }],
     shoes: [{
-        name: String,
-        img: String,
-        description: String,
-        link: String, 
+        type: mongoose.Types.ObjectId,
+        ref: "Shoe"
     }],
     inspirations: [{
-        name: String,
-        img: String,
-        description: String,
+        type: mongoose.Types.ObjectId,
+        ref: "Inspiration"
     }]
 })
 

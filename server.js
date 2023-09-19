@@ -22,11 +22,13 @@ db.on('disconnected', () => { console.log('mongo disconnected')})
 
 //importing it to my controller
 const styleController = require("./controller/stylemate.js")
+const topController = require("./controller/tops.js")
 
 //MIDDLEWARE sections 
 app.use(express.urlencoded({extended: true}))
 app.use(methodOverride('_method'))
 app.use('/stylemate', styleController)
+app.use('/top', topController)
 app.use(express.static('public'))
 
 //Origin starter home page in heroku 

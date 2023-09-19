@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 
 //created a model 
-const topSchema = new mongoose.Schema({
+const shoeSchema = new mongoose.Schema({
     name: String,
     img: String,
     description: String,
@@ -12,9 +12,6 @@ const topSchema = new mongoose.Schema({
         ref: "Wardrobe"
     }
 })
-const Top = mongoose.model("Top", topSchema)
+const Shoe = mongoose.model("Shoe", shoeSchema)
 
-module.exports = Top
-
-
-//one to many relationship - look it up 
+module.exports = Shoe

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <H1>Update Top</H1>
+        <div>
+            <div id="topSections" >
+
+                <form action="/tops/<%=top.id%>?_method=PUT" method="POST">
+                        <div>
+                            <label for="tops[name]">Top Name:</label>
+                            <input type="text" id="tops[name]" name="tops[name]" value="<%= top.name %>"><br>
+        
+                            <label for="tops[img]">Top image:</label>
+                            <input type="text" id="tops[img]" name="tops[img]" value="<%= top.img %>"><br>
+        
+                            <label for="tops[description]">Description:</label>
+                            <input type="text" id="tops[description]" name="tops[description]" value="<%= top.description %>"><br>
+        
+                            <label for="tops[link]">Link:</label>
+                            <input type="text" id="tops[link]" name="tops[link]" value="<%= top.link %>"><br>
+        
+                            <input type="submit" value="Save Changes">
+                        </div><br>
+                    </form>
+                    </form>
+            </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>TOPS IN WARDROBE <%= wardrobe.title.name %></h1>
+    <div>
+        <% for(let i = 0; i < wardrobe.tops.length; i++) { %>
+            <div>
+                <img src="<%= wardrobe.tops[i].img %>" >
+                <h2><%= wardrobe.tops[i].name %></h2>
+                <p><%= wardrobe.tops[i].description %></p>
+                <a href="<%= wardrobe.tops[i].link %>">LINK</a>
+            </div>
+            <a href="/top/<%= wardrobe.tops[i]._id %>/edit">update</a>
+        <% } %>
+        <a href="/top/<%= id %>/new"> Add top</a>
+    </div>
+
+</body>
+</html>
