@@ -61,24 +61,13 @@ router.get('/:id/edit', async (req, res) =>{
 router.post('/', async (req, res) => {
 
     const title = req.body.title;
-    const tops = req.body.tops;
-    const bottoms = req.body.bottoms;
-    const shoes = req.body.shoes;
-    const inspirations = req.body.inspirations;
 
     try{
-        // creating new tops, bottoms, shoes, and inspirations
-        const addTops = await Top.create(tops)
-        const addBottoms = await Bottom.create(bottoms)
-        const addShoes = await Shoe.create(shoes)
-        const addInspiration = await Inspiration.create(inspirations)
+
         //creating a wardrobe 
         const newWardrobe = await Wardrobe.create({
             title,
-            tops: addTops,
-            bottoms: addBottoms,
-            shoes: addShoes,
-            inspirations: addInspiration
+            
         })
         res.redirect('/stylemate')
         console.log(newWardrobe)
@@ -96,10 +85,6 @@ router.put('/:id', async (req, res) => {
         const updatedWardrobe = await Wardrobe.findByIdAndUpdate(req.params.id,
             {
                 title: req.body.title,
-                tops: req.body.tops.map(top => mongoose.Types.ObjectId(top)),
-                bottoms: req.body.bottoms.map(bottom => mongoose.Types.ObjectId(bottom)), 
-                shoes: req.body.shoes.map(shoe => mongoose.Types.ObjectId(shoe)), 
-                inspirations: req.body.inspirations.map(inspiration => mongoose.Types.ObjectId(inspiration))
             }, 
             {new: true}
         )

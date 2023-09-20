@@ -31,8 +31,10 @@
                 <a href=<%= wardrobe.bottoms[i].link %>>LINK</a>
             </div>
         <% } %>
+        <a href="/bottom/<%= wardrobe.id %>">View Bottoms</a>
      </div>
      <div>
+        <h1>Shoe</h1>
         <% for(let i = 0; i < wardrobe.shoes.length; i++) { %>
             <div>
                 <img src= <%= wardrobe.shoes[i].img %>>
@@ -41,6 +43,7 @@
                 <a href=<%= wardrobe.shoes[i].link %>>LINK</a>
             </div>
         <% } %>
+        <a href="/shoe/<%= wardrobe.id %>">View Shoes</a>
      </div>
      <% for(let i = 0; i < wardrobe.inspirations.length; i++) { %>
         <div>
@@ -49,7 +52,7 @@
             <p><%= wardrobe.inspirations[i].description %></p>
         </div>
     <% } %>
-
+    <a href="/inspiration/<%= wardrobe.id %>">View Inspiration</a>
      <div>
         <a href="/stylemate/<%=wardrobe.id%>/edit">EDIT</a>
         <a href="/stylemate">BACK</a>
