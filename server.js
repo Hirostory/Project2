@@ -36,6 +36,7 @@ app.use('/bottom', bottomController)
 app.use('/shoe', shoeController)
 app.use('/inspiration', inspirationController)
 app.use(express.static('public'))
+app.use(express.static('images'))
 
 //Origin starter home page in heroku 
 app.get('/', (req, res) => {
