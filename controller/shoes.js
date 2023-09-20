@@ -103,7 +103,7 @@ router.put('/:id', async (req, res) => {
         }
        const updatedShoe = await Shoe.findByIdAndUpdate(shoeId, shoeToUpdate, {new:true})
        console.log("UPDATED TOP: " + updatedShoe)
-        res.redirect(`/shoe`)
+        res.redirect(`/stylemate`)
     } catch (error) {
         console.log("ERROR ON UPDATE REQUEST: ", error)
         res.status(500).send(error)
@@ -116,7 +116,7 @@ router.delete('/:id', async (req, res) => {
         const shoeId = req.params.id
         const shoe = await Shoe.findByIdAndDelete(shoeId)
         console.log("Deleted Shoe: " + shoe)
-        res.redirect(`/shoe`)
+        res.redirect(`/stylemate`)
     } catch (error){
         console.log("ERROR ON DELETE REQUEST: ", error)
         res.status(500).send(error)

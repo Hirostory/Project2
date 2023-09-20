@@ -103,7 +103,7 @@ router.put('/:id', async (req, res) => {
         }
        const updatedTop = await Bottom.findByIdAndUpdate(bottomId, bottomToUpdate, {new:true})
        console.log("UPDATED Top: " + updatedTop)
-        res.redirect(`/bottom`)
+        res.redirect(`/stylemate`)
     } catch (error) {
         console.log("ERROR ON UPDATE REQUEST: ", error)
         res.status(500).send(error)
@@ -116,7 +116,7 @@ router.delete('/:id', async (req, res) => {
         const bottomId = req.params.id
         const bottom = await Bottom.findByIdAndDelete(bottomId)
         console.log("Deleted Bottom: " + bottom)
-        res.redirect(`/bottom`)
+        res.redirect(`/stylemate`)
     } catch (error){
         console.log("ERROR ON DELETE REQUEST: ", error)
         res.status(500).send(error)

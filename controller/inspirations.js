@@ -104,7 +104,7 @@ router.put('/:id', async (req, res) => {
         }
        const updatedInspiration = await Inspiration.findByIdAndUpdate(inspirationId, inspoToUpdate, {new:true})
        console.log("UPDATED INSPIRATION: " + updatedInspiration)
-        res.redirect(`/inspiration`)
+        res.redirect(`/stylemate`)
     } catch (error) {
         console.log("ERROR ON UPDATE REQUEST: ", error)
         res.status(500).send(error)
@@ -117,7 +117,7 @@ router.delete('/:id', async (req, res) => {
         const inspirationId = req.params.id
         const inspiration = await Inspiration.findByIdAndDelete(inspirationId)
         console.log("Deleted Inpiration: " + inspiration)
-        res.redirect(`/inspiration`)
+        res.redirect(`/stylemate`)
     } catch (error){
         console.log("ERROR ON DELETE REQUEST: ", error)
         res.status(500).send(error)

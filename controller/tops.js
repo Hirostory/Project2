@@ -95,8 +95,6 @@ router.put('/:id', async (req, res) => {
     try { 
         
         const topId = req.params.id
-        const wardrobeId = req.params.wardrobeId
-        console.log("this is wardrobeId: " + findWardrobe)
         console.log("this is topId:" + topId)
         const topToUpdate = {
             name: req.body.name,
@@ -106,7 +104,7 @@ router.put('/:id', async (req, res) => {
         }
        const updatedTop = await Top.findByIdAndUpdate(topId, topToUpdate, {new:true})
        console.log("UPDATED TOP: " + updatedTop)
-        res.redirect(`/stylemate/${findWardrobe}` )
+        res.redirect(`/stylemate`)
     } catch (error) {
         console.log("ERROR ON UPDATE REQUEST: ", error)
         res.status(500).send(error)
