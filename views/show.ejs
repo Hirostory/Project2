@@ -4,59 +4,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../css/mainshow.css">
 </head>
 <body>
+
+    <%- include('./partials/header.ejs') %>
+    <div class="topline"></div>    
+
+<div class="head-sections">
     <h1>Current Wardrobe</h1>
-   
-     <div>
+    <h3><%= wardrobe.title.name %></h3>
+</div>
+
+<div>
+    <a href="/stylemate/<%=wardrobe.id%>/edit">EDIT</a>
+    <a href="/stylemate">BACK</a>
+ </div>
+
+   <div class="head-sections">
         <h1>TOPS</h1>
+        <div class="topline"></div>
+   </div>
+     <div class="wardrobe-container">
         <% for(let i = 0; i < wardrobe.tops.length; i++) { %>
-            <div>
-                <img src= <%= wardrobe.tops[i].img %>>
+            <div class="image-name">
+                <a href=<%= wardrobe.tops[i].link %>>
+                     <img src= <%= wardrobe.tops[i].img %>>
+                </a>
                 <h2><%= wardrobe.tops[i].name %></h2>
-                <p><%= wardrobe.tops[i].description %></p>
-                <a href=<%= wardrobe.tops[i].link %>>LINK</a>
              </div>
              
         <% } %>
         <a href="/top/<%= wardrobe.id %>">View Tops</a>
      </div>
-     <div>
-        <h1>BOTTOM</h1>
+     <div class="head-sections">
+        <h1>BOTTOMS</h1>
+        <div class="topline"></div>
+   </div>
+     <div class="wardrobe-container">
         <% for(let i = 0; i < wardrobe.bottoms.length; i++) { %>
-            <div>
-                <img src= <%= wardrobe.bottoms[i].img %>>
+            <div class="image-name">
+                <a href=<%= wardrobe.bottoms[i].link %>>
+                    <img src= <%= wardrobe.bottoms[i].img %>>
+                </a>
                 <h2><%= wardrobe.bottoms[i].name %></h2>
-                <p><%= wardrobe.bottoms[i].description %></p>
-                <a href=<%= wardrobe.bottoms[i].link %>>LINK</a>
             </div>
         <% } %>
         <a href="/bottom/<%= wardrobe.id %>">View Bottoms</a>
      </div>
-     <div>
-        <h1>Shoe</h1>
+     <div class="head-sections">
+        <h1>SHOES</h1>
+        <div class="topline"></div>
+   </div>
+      <div class="wardrobe-container">
         <% for(let i = 0; i < wardrobe.shoes.length; i++) { %>
-            <div>
-                <img src= <%= wardrobe.shoes[i].img %>>
+            <div class="image-name">
+                <a href=<%= wardrobe.shoes[i].link %>>
+                    <img class="shoe-image" src= <%= wardrobe.shoes[i].img %>>
+                </a>
                 <h2><%= wardrobe.shoes[i].name %></h2>
-                <p><%= wardrobe.shoes[i].description %></p>
-                <a href=<%= wardrobe.shoes[i].link %>>LINK</a>
             </div>
         <% } %>
         <a href="/shoe/<%= wardrobe.id %>">View Shoes</a>
-     </div>
-     <h1>Inspiration</h1>
-     <% for(let i = 0; i < wardrobe.inspirations.length; i++) { %>
-        <div>
-            <img src= <%= wardrobe.inspirations[i].img %>>
-            <h2><%= wardrobe.inspirations[i].name %></h2>
-            <p><%= wardrobe.inspirations[i].description %></p>
+      </div>
+      <div class="head-sections">
+        <h1>INSPIRATIONS</h1>
+        <div class="topline"></div>
+      </div> 
+        <div class="wardrobe-container">
+            
+            <% for(let i = 0; i < wardrobe.inspirations.length; i++) { %>
+            <div class="image-name">
+                <img  src= <%= wardrobe.inspirations[i].img %>>
+            </div>
+        <% } %>
+        <a href="/inspiration/<%= wardrobe.id %>">View Inspiration</a>
         </div>
-    <% } %>
-    <a href="/inspiration/<%= wardrobe.id %>">View Inspiration</a>
-     <div>
-        <a href="/stylemate/<%=wardrobe.id%>/edit">EDIT</a>
-        <a href="/stylemate">BACK</a>
-     </div>
+        <div class="topline"></div>
+     
 </body>
 </html>

@@ -1,17 +1,9 @@
-h1 {
-    color: brown;   
-}
 
-h2 {
-    position: absolute;
-    color: azure;
-    font-size: 2rem;
-    z-index: 1;
-}
-
-.topline-container {
+body {
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .topline {
@@ -20,56 +12,49 @@ h2 {
     background-color: black;
     object-position: center;
 }
-.mainview {
-    display: flex;
+
+h3 {
+    margin-top: -1.5rem;
 }
 
-ul {
-    margin: 0;
-    /* background-color: bisque; */
+.wardrobe-container {
+    margin: 20px;
+    height: 100%;
+    width: 1700px;
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin: 5rem;
+    /* background-color: aquamarine; */
+    gap: 30px;
 }
 
-li {
+img {
+    height: 400px;
+    width: 100%;
+    object-fit: cover;
+    
+}
+
+.image-name {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-img {
-    height: 550px;
-    width: 400px;
-    object-fit: cover;
-    margin: 2rem;
-    opacity: .7;
+.shoe-image {
+    height: 400px;
+    width: 300px;
+    object-fit: scale-down;
 }
 
-.create-box {
-    height: 550px;
-    width: 400px;
-    background-color: gray;
+.head-sections {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
-
-.blackback {
-    position: absolute;
-    background-color: black;
-    height: 550px;
-    width: 400px;
-    /* border: 4px black solid; */
-} 
-form {
-    position: absolute;
-    margin-top: 31rem;
-    margin-left: 18rem;
-}
-
-
 
 /* this is for the header */
 
@@ -105,11 +90,4 @@ nav {
     flex-direction: row;
     align-items: center;
     gap: 20px;
-}
-
-/* this is for the footer */
-
-.copyright {
-    display: flex;
-    justify-content: center;
 }
