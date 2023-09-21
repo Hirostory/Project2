@@ -5,6 +5,20 @@ h1 {
 h2 {
     position: absolute;
     color: azure;
+    font-size: 2rem;
+    z-index: 1;
+}
+
+.topline-container {
+    display: flex;
+    justify-content: center;
+}
+
+.topline {
+    height: 3px;
+    width: 1200px;
+    background-color: black;
+    object-position: center;
 }
 .mainview {
     display: flex;
@@ -12,7 +26,7 @@ h2 {
 
 ul {
     margin: 0;
-    background-color: bisque;
+    /* background-color: bisque; */
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -33,10 +47,45 @@ img {
     width: 400px;
     object-fit: cover;
     margin: 2rem;
+    opacity: .7;
 }
 
+.blackback {
+    position: absolute;
+    background-color: black;
+    height: 550px;
+    width: 400px;
+    /* border: 4px black solid; */
+} 
 form {
     position: absolute;
     margin-top: 31rem;
     margin-left: 18rem;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.head-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.head-word {
+    position: absolute;
+    color: rgb(255, 255, 255);
+    font-size: 5rem;
+}
+
+.headerpic {
+    width: 1000px;
+    height: 400px;
+    object-fit: cover;
+    object-position: center 55%;
+    opacity: 1;
 }

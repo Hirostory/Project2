@@ -7,14 +7,23 @@
     <link rel="stylesheet" href="../css/mainview.css">
 </head>
 <body>
-    <h1>StyleMate</h1>
+    <header>
+       <div class="head-image-container">
+            <img src="../stylematelogopic.jpeg" alt="Logo" class="headerpic">
+            <h1 class="head-word">StyleMate</h1>
+       </div>
     <nav>
         <a href="/stylemate/new"> Create a Wardrobe</a>
     </nav>
+    </header>
+    <div class="topline-container">
+        <div class="topline"></div>
+    </div>
     <div class="mainview">
         <ul>
             <% for(let i = 0; i < wardrobes.length; i++) { %>
             <li>
+                <div class="blackback"></div>
                 <h2><%= wardrobes[i].title.name %> </h2>
                 <a href="/stylemate/<%=wardrobes[i].id %>">
                     <img src=<%= wardrobes[i].title.img %> >
