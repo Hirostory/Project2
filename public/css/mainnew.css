@@ -1,0 +1,94 @@
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #EBEFF2;
+    margin-top: 20px;
+    border: 2px solid black;
+    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+                      0 0 0 2px rgb(255, 255, 255),
+                      0.3em 0.3em 1em rgba(0, 0, 0, 0.3);;
+    padding-bottom: 45px;
+    height: 300px;
+    width: 600px;
+} 
+input {
+    height: 30px;
+    width: 250px;
+    font-size: 1.5rem;
+    font-family: Georgia, Times, 'Times New Roman', serif;
+}
+
+.submit {
+    border-radius: 10px;
+    width: 120px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* background-color: blueviolet; */
+    height: 500px;
+    width: auto;
+}
+
+
+.topline {
+    height: 3px;
+    width: 1200px;
+    background-color: black;
+    object-position: center;
+}
+
+.bottomline {
+    height: 3px;
+    width: 700px;
+    background-color: black;
+    object-position: center;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* this is for the header */
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.head-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.head-word {
+    position: absolute;
+    color: rgb(255, 255, 255);
+    font-size: 5rem;
+}
+
+.headerpic {
+    width: 1000px;
+    height: 400px;
+    object-fit: cover;
+    object-position: center 55%;
+    opacity: 1;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}

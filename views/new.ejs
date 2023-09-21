@@ -4,22 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../css/mainnew.css">
 </head>
 <body>
-    <h1>Create Your Wardrobe</h1>
-
+    <%- include('./partials/header.ejs') %>
+    <div class="topline"></div>  
+    <main>
+        <h1>Create Your Wardrobe</h1>
+        <div class="bottomline"></div>  
     <form action="/stylemate" method="POST" >
-       <div>
-            <label for="title_name"> Title Name:</label>
+       <div class="container">
+            <h2>Wardrobe Name </h2>
+            <label for="title_name"></label>
             <input type="text" id="title_name" name="title[name]"><br>
 
-            <label for="title_img"> Image:</label>
+            <h2>Image</h2>
+            <label for="title_img"></label>
             <input type="text" id="title_img" name="title[img]"><br>
-       </div><br>
-
-        <input type="submit" value="submit">
+            <input class="submit" type="submit" value="submit">
+        </div><br>
     </form>
-
+    </main>
+    <div class="topline"></div>  
+    <%- include('./partials/footer.ejs') %>
     <script type="text/javascript" src="/js/app.js" ></script>
 </body>
 </html>
