@@ -1,0 +1,42 @@
+h1 {
+    color: brown;   
+}
+
+h2 {
+    position: absolute;
+    color: azure;
+}
+.mainview {
+    display: flex;
+}
+
+ul {
+    margin: 0;
+    background-color: bisque;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 5rem;
+}
+
+li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    height: 550px;
+    width: 400px;
+    object-fit: cover;
+    margin: 2rem;
+}
+
+form {
+    position: absolute;
+    margin-top: 31rem;
+    margin-left: 18rem;
+}

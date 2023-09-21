@@ -4,24 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../css/mainview.css">
 </head>
 <body>
     <h1>StyleMate</h1>
     <nav>
         <a href="/stylemate/new"> Create a Wardrobe</a>
     </nav>
-    <ul>
-        <% for(let i = 0; i < wardrobes.length; i++) { %>
-        <li>
-            <h2><%= wardrobes[i].title.name %> </h2>
-            <a href="/stylemate/<%=wardrobes[i].id %>">
-                <img src=<%= wardrobes[i].title.img %> >
-            </a>
-        </li>
-        <form action="/stylemate/<%=wardrobes[i].id %>?_method=DELETE" method="POST" >
-            <input type="submit" value="DELETE">
-        </form>
-        <% } %>
-    </ul>
+    <div class="mainview">
+        <ul>
+            <% for(let i = 0; i < wardrobes.length; i++) { %>
+            <li>
+                <h2><%= wardrobes[i].title.name %> </h2>
+                <a href="/stylemate/<%=wardrobes[i].id %>">
+                    <img src=<%= wardrobes[i].title.img %> >
+                </a>
+                <form action="/stylemate/<%=wardrobes[i].id %>?_method=DELETE" method="POST" >
+                    <input type="submit" value="DELETE">
+                </form>
+            </li>
+            <% } %>
+        </ul>
+    </div>
 </body>
 </html>
