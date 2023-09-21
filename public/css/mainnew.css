@@ -26,6 +26,13 @@ input {
     width: 120px;
 }
 
+.editback-button {
+    text-decoration: none;
+    color: black;
+    margin-top: -20px;
+
+}
+
 main {
     display: flex;
     flex-direction: column;
