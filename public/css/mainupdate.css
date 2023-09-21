@@ -1,0 +1,35 @@
+/* this is for the header */
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.head-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.head-word {
+    position: absolute;
+    color: rgb(255, 255, 255);
+    font-size: 5rem;
+}
+
+.headerpic {
+    width: 1000px;
+    height: 400px;
+    object-fit: cover;
+    object-position: center 55%;
+    opacity: 1;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
