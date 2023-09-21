@@ -7,17 +7,7 @@
     <link rel="stylesheet" href="../css/mainview.css">
 </head>
 <body>
-    <header>
-       <div class="head-image-container">
-            <img src="../stylematelogopic.jpeg" alt="Logo" class="headerpic">
-            <h1 class="head-word">StyleMate</h1>
-       </div>
-    <nav>
-        <h4>Log in</h4> | 
-        <h4>About</h4> |
-        <h4>Search</h4>
-    </nav>
-    </header>
+    <%- include('./partials/header.ejs') %>
     <div class="topline-container">
         <div class="topline"></div>
     </div>
@@ -47,10 +37,6 @@
     <div class="topline-container">
         <div class="topline"></div>
     </div>
-    <footer>
-        <div class="copyright">
-            &copy; 2023 Hiroaki Sotooka
-        </div>
-        </footer>
+    <%- include('./partials/footer.ejs') %>
 </body>
 </html>

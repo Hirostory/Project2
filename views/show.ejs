@@ -16,10 +16,12 @@
     <h3><%= wardrobe.title.name %></h3>
 </div>
 
-<div>
-    <a href="/stylemate/<%=wardrobe.id%>/edit">EDIT</a>
-    <a href="/stylemate">BACK</a>
- </div>
+<div class="edit-back">
+    <a class="editback-button" href="/stylemate/<%=wardrobe.id%>/edit">EDIT</a> 
+    <span class="editback-button" >|</span>
+    <a class="editback-button" href="/stylemate">BACK</a>
+</div>
+    <div class="bottomline"></div>
 
    <div class="head-sections">
         <h1>TOPS</h1>
@@ -35,8 +37,15 @@
              </div>
              
         <% } %>
-        <a href="/top/<%= wardrobe.id %>">View Tops</a>
+             <div class="add-item-wardrobe">
+                <a href="/top/<%= wardrobe.id %>">
+                    <img class="add-item-image" src="../plus-sign.png" alt="">
+                </a>
+                <h5>add/view items</h5>
+             </div>
+        
      </div>
+     <div class="bottomline"></div>
      <div class="head-sections">
         <h1>BOTTOMS</h1>
         <div class="topline"></div>
@@ -50,8 +59,14 @@
                 <h2><%= wardrobe.bottoms[i].name %></h2>
             </div>
         <% } %>
-        <a href="/bottom/<%= wardrobe.id %>">View Bottoms</a>
+        <div class="add-item-wardrobe">
+            <a href="/bottom/<%= wardrobe.id %>">
+                <img class="add-item-image" src="../plus-sign.png" alt="">
+            </a>
+            <h5>add/view items</h5>
+         </div>
      </div>
+     <div class="bottomline"></div>
      <div class="head-sections">
         <h1>SHOES</h1>
         <div class="topline"></div>
@@ -65,8 +80,14 @@
                 <h2><%= wardrobe.shoes[i].name %></h2>
             </div>
         <% } %>
-        <a href="/shoe/<%= wardrobe.id %>">View Shoes</a>
+        <div class="add-item-wardrobe">
+            <a href="/shoe/<%= wardrobe.id %>">
+                <img class="add-item-image" src="../plus-sign.png" alt="">
+            </a>
+            <h5>add/view items</h5>
+         </div>
       </div>
+      <div class="bottomline"></div>
       <div class="head-sections">
         <h1>INSPIRATIONS</h1>
         <div class="topline"></div>
@@ -78,9 +99,14 @@
                 <img  src= <%= wardrobe.inspirations[i].img %>>
             </div>
         <% } %>
-        <a href="/inspiration/<%= wardrobe.id %>">View Inspiration</a>
+        <div class="add-item-wardrobe">
+            <a href="/inspiration/<%= wardrobe.id %>">
+                <img class="add-item-image" src="../plus-sign.png" alt="">
+            </a>
+            <h5>add/view items</h5>
+         </div>
         </div>
         <div class="topline"></div>
-     
+        <%- include('./partials/footer.ejs') %>
 </body>
 </html>
