@@ -51,7 +51,7 @@ router.get('/:id/edit', async (req, res) => {
     try {
         const foundInspiration = await Inspiration.findById(req.params.id)
 
-        res.render('Inspirations/edit.ejs', {
+        res.render('inspirations/edit.ejs', {
             inspiration: foundInspiration
         })
     } catch (error) {
