@@ -4,25 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/css/subpage/subshow.css">
 </head>
 <body>
-    <h1>TOPS IN WARDROBE <%= wardrobe.title.name %></h1>
-    <div>
-        <% for(let i = 0; i < wardrobe.tops.length; i++) { %>
+    <%- include('../partials/header.ejs') %>
+    <main>
+       
+            <h1 class="title-page">TOPS IN WARDROBE</h1>
+            <div class="topline"></div> 
+            <h3><%= wardrobe.title.name %></h3>
             <div>
-                <img src="<%= wardrobe.tops[i].img %>" >
-                <h2><%= wardrobe.tops[i].name %></h2>
-                <p><%= wardrobe.tops[i].description %></p>
-                <a href="<%= wardrobe.tops[i].link %>">LINK</a>
+                <a href="/top/<%= id %>/new"> Add top</a>
+                <a href="/stylemate/<%= id %>">BACK</a>
             </div>
-            <a href="/top/<%= wardrobe.tops[i]._id %>/edit">update</a>
-            <form action="/top/<%= wardrobe.tops[i].id%>?_method=DELETE" method="POST">
-                <input type="submit" value="DELETE">
-            </form>
-        <% } %>
-        <a href="/top/<%= id %>/new"> Add top</a>
-        <a href="/stylemate/<%= id %>">BACK</a>
-    </div>
-
+            <div class="wardrobe-container">
+                <% for(let i = 0; i < wardrobe.tops.length; i++) { %>
+                    <div class="clothe-info">
+                        <a href="<%= wardrobe.tops[i].link %>">
+                            <img src="<%= wardrobe.tops[i].img %>" >
+                        </a>
+                        <h2><%= wardrobe.tops[i].name %></h2>
+                        <p class="description-box"><%= wardrobe.tops[i].description %></p>
+                        
+                    
+                    <div class="edit-delete-container">
+                        <a href="/top/<%= wardrobe.tops[i]._id %>/edit">update</a>
+                    <form action="/top/<%= wardrobe.tops[i].id%>?_method=DELETE" method="POST">
+                        <input type="submit" value="DELETE">
+                    </form>
+                    </div>
+                    </div>
+                <% } %>
+            </div>
+    </main>
+    <%- include('../partials/footer.ejs') %>
 </body>
 </html>

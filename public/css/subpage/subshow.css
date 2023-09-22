@@ -1,9 +1,13 @@
 
-body {
+main {
     display: flex;
-    justify-content: center;
     flex-direction: column;
     align-items: center;
+    justify-content: center;  
+}
+
+.title-page {
+    margin: 30px;
 }
 
 .topline {
@@ -11,17 +15,6 @@ body {
     width: 1200px;
     background-color: black;
     object-position: center;
-}
-
-.bottomline {
-    height: 3px;
-    width: 900px;
-    background-color: black;
-    object-position: center;
-}
-
-h3 {
-    margin-top: -1.5rem;
 }
 
 .wardrobe-container {
@@ -36,6 +29,11 @@ h3 {
     gap: 30px;
 }
 
+/* .clothe-info {
+    display: flex;
+    flex-direction: column;
+} */
+
 img {
     height: 400px;
     width: 100%;
@@ -43,50 +41,15 @@ img {
     
 }
 
-.image-name {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-
-.shoe-image {
-    height: 400px;
+p {
+    height: auto;
     width: 300px;
-    object-fit: scale-down;
+    padding: 10px;
 }
 
-.head-sections {
+.edit-delete-container {
     display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-}
-
-.edit-back {
-    display: flex;
-    gap: 20px;
-
-}
-
-.editback-button {
-    font-size: 2.5rem;
-    font-weight: bolder;
-    text-decoration: none;
-    color: black;
-}
-
-.add-item-wardrobe {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.add-item-image {
-    height: 100px;
-    width: auto;
+    
 }
 
 /* this is for the header */
