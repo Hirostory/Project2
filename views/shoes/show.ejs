@@ -4,25 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/css/subpage/subshow.css">
 </head>
 <body>
-    <h1>SHOE IN WARDROBE <%= wardrobe.title.name %></h1>
-    <div>
-        <% for(let i = 0; i < wardrobe.shoes.length; i++) { %>
-            <div>
-                <img src="<%= wardrobe.shoes[i].img %>" >
-                <h2><%= wardrobe.shoes[i].name %></h2>
-                <p><%= wardrobe.shoes[i].description %></p>
-                <a href="<%= wardrobe.shoes[i].link %>">LINK</a>
+    <%- include('../partials/header.ejs') %>
+    <div class="topline"></div> 
+    <main>
+        <h1>SHOE IN WARDROBE</h1>
+        <h3><%= wardrobe.title.name %></h3>
+        <div class="bottomline"></div>
+            <div class="add-back-container">
+                <a class="show-button" href="/shoe/<%= id %>/new">| Add Shoe |</a>
+                <a class="show-button" href="/stylemate/<%= id %>">BACK |</a>
             </div>
-            <a href="/shoe/<%= wardrobe.shoes[i]._id %>/edit">update</a>
-            <form action="/shoe/<%= wardrobe.shoes[i].id%>?_method=DELETE" method="POST">
-                <input type="submit" value="DELETE">
-            </form>
-        <% } %>
-        <a href="/shoe/<%= id %>/new"> Add Shoe</a>
-        <a href="/stylemate/<%= id %>">BACK</a>
-    </div>
-
+            <div class="topline"></div>
+        <div class="wardrobe-container">
+            <% for(let i = 0; i < wardrobe.shoes.length; i++) { %>
+                <div class="clothe-info">
+                    <a href="<%= wardrobe.shoes[i].link %>">
+                      <img class="shoe-image" src="<%= wardrobe.shoes[i].img %>" >  
+                    </a>
+                    <h2><%= wardrobe.shoes[i].name %></h2>
+                    <div class="showline"></div>
+                    <p><%= wardrobe.shoes[i].description %></p>
+                    
+                    <div class="showbottomline"></div>
+                <div class="edit-delete-container" >
+                    <a class="updatebutton" href="/shoe/<%= wardrobe.shoes[i]._id %>/edit">| Update |</a>
+                    <form action="/shoe/<%= wardrobe.shoes[i].id%>?_method=DELETE" method="POST">
+                        <input class="removebutton" type="submit" value="DELETE">
+                    </form>
+                </div>
+                </div>
+            <% } %>
+            
+        </div>
+        <div class="topline"></div> 
+    </main>
+    <%- include('../partials/footer.ejs') %>
 </body>
 </html>

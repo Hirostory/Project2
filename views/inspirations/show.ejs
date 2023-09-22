@@ -4,25 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/css/subpage/subshow.css">
 </head>
 <body>
-    <h1>INSPIRATION IN WARDROBE <%= wardrobe.title.name %></h1>
-    <div>
+    <%- include('../partials/header.ejs') %>
+    <div class="topline"></div> 
+    <main>
+        <h1>INSPIRATION IN WARDROBE</h1>
+        <h3><%= wardrobe.title.name %></h3>
+        <div class="bottomline"></div>
+        <div class="add-back-container">
+            <a class="show-button" href="/inspiration/<%= id %>/new">| Add inspiration |</a>
+            <a class="show-button" href="/stylemate/<%= id %>">BACK |</a>
+        </div>
+        <div class="topline"></div>
+    <div class="wardrobe-container">
         <% for(let i = 0; i < wardrobe.inspirations.length; i++) { %>
-            <div>
-                <img src="<%= wardrobe.inspirations[i].img %>" >
+            <div class="clothe-info" >
+                <a href="<%= wardrobe.inspirations[i].link %>">
+                    <img src="<%= wardrobe.inspirations[i].img %>" >
+                </a>
                 <h2><%= wardrobe.inspirations[i].name %></h2>
+                <div class="showline"></div>
                 <p><%= wardrobe.inspirations[i].description %></p>
-                <a href="<%= wardrobe.inspirations[i].link %>">LINK</a>
-            </div>
-            <a href="/inspiration/<%= wardrobe.inspirations[i]._id %>/edit">update</a>
+                
+                <div class="showbottomline"></div>
+            <div class="edit-delete-container" >
+                <a class="updatebutton" href="/inspiration/<%= wardrobe.inspirations[i]._id %>/edit">| Update |</a>
             <form action="/inspiration/<%= wardrobe.inspirations[i].id%>?_method=DELETE" method="POST">
-                <input type="submit" value="DELETE">
+                <input class="removebutton" type="submit" value="REMOVE">
             </form>
+            </div>
+             </div>  
         <% } %>
-        <a href="/inspiration/<%= id %>/new"> Add inspiration</a>
-        <a href="/stylemate/<%= id %>">BACK</a>
+        <div class="topline"></div> 
     </div>
-
+    </main>
+    <%- include('../partials/footer.ejs') %>
 </body>
 </html>
