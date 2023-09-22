@@ -10,9 +10,8 @@ Gone are the days of endless scrolling and fashion dilemmas. Now, you can effort
 A wardrobe capsule is a small, carefully curated collection of versatile clothing items that mix and match easily to create a variety of outfits. It emphasizes quality over quantity, simplifies dressing choices, and reduces clutter while promoting timeless, classic pieces.
 
 ## WireFraming 
-
-![StyleMate-Framing2](https://github.com/Hirostory/Project2/assets/135872883/d0ce16c0-f435-4469-9714-ee1717677731)
-
+**left side is the planing | right side the end product**
+![StyleMate-Framing-END](https://github.com/Hirostory/Project2/assets/135872883/c10fea4f-dce4-4a37-8615-2a9b1c9b38eb)
 
 ## Language Used 
 
