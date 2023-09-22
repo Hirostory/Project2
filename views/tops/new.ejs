@@ -4,31 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/subpage/topnew.css">
+    <link rel="stylesheet" href="/css/subpage/subnew.css">
 </head>
 <body>
-    <H1>Add Top</H1>
+    <%- include('../partials/header.ejs') %>
+    <div class="topline"></div> 
+    <main>
+        <h1>| Add Top |</h1>
+        <div class="bottomline"></div> 
         <div>
             <div id="topSections" >
 
                     <form action="/top/<%= id %>/add" method="POST">
-                        <div>
-                            <label for="name"> Top Name:</label>
+                        <div class="container">
+                            <h2>| Name |</h2>
+                            <label for="name"></label>
                             <input type="text" id="name" name="name"><br>
-    
-                            <label for="img"> Top image:</label>
+                            
+                            <h2>| Image |</h2>
+                            <label for="img"></label>
                             <input type="text" id="img" name="img"><br>
-    
-                            <label for="description"> Description:</label>
+                            
+                            <h2>| description |</h2>
+                            <label for="description"></label>
                             <input type="text" id="description" name="description"><br>
-    
-                            <label for="link"> Link:</label>
+                            
+                            <h2>| Link |</h2>
+                            <label for="link"></label>
                             <input type="text" id="link" name="link"><br>
     
-                            <input type="submit" value="ADD">
+                            <input class="submit" type="submit" value="ADD">
                         </div><br>
                     </form>
+                    <!-- <a href="/top/<%= id %>/">
+                        <h1>Back</h1>
+                    </a> -->
             </div>
     </div>
+    </main>
+    <div class="topline"></div> 
+    <%- include('../partials/footer.ejs') %>
 </body>
 </html>
