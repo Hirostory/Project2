@@ -4,31 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/css/subpage/subedit.css">
 </head>
 <body>
-    <H1>Update Inspiration</H1>
+    <%- include('../partials/header.ejs') %>
+    <div class="topline"></div> 
+    <main>
+        <H1>Update Inspiration</H1>
+        <div class="bottomline"></div> 
         <div>
             <div id="inspirationSections" >
 
                 <form action="/inspiration/<%= inspiration._id %>?_method=PUT" method="POST">
-                        <div>
-                            <label for="name">Inspiration Name:</label>
+                        <div class="container">
+                            <h2>| Name |</h2>
+                            <label for="name"></label>
                             <input type="text" id="name" name="name" value="<%= inspiration.name %>"><br>
-        
-                            <label for="img">Inspiration image:</label>
+                            
+                            <h2>| Image |</h2>
+                            <label for="img"></label>
                             <input type="text" id="img" name="img" value="<%= inspiration.img %>"><br>
-        
-                            <label for="description">Description:</label>
+                            
+                            <h2>| Description |</h2>
+                            <label for="description"></label>
                             <input type="text" id="description" name="description" value="<%= inspiration.description %>"><br>
-        
-                            <label for="link">Link:</label>
+                            
+                            <h2>| Link |</h2>
+                            <label for="link"></label>
                             <input type="text" id="link" name="link" value="<%= inspiration.link %>"><br>
         
-                            <input type="submit" value="Save Changes">
+                            <input class="submit" type="submit" value="Save Changes">
                         </div><br>
                     </form>
                     </form>
             </div>
     </div>
+    <h2>Current Inspiration</h2>
+      <div class="bottomline"></div> 
+      <img src="<%= inspiration.img %>" alt="">
+      <div class="bottomline"></div>
+    </main>
+    <div class="topline"></div> 
+    <%- include('../partials/footer.ejs') %>
 </body>
 </html>
