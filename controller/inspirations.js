@@ -57,6 +57,7 @@ router.get('/:id/edit', async (req, res) => {
     } catch (error) {
         console.log("ERROR ON EDIT REQUEST: ", error)
         res.status(500).send(error)
+        console.log(error)
     }
 })
 
