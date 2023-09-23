@@ -18,11 +18,11 @@ A capsule wardrobe streamlines your clothing collection to a carefully curated s
 - HTML 
 - CSS 
 - JavaScript
-- EXPRESS (7 RESTful routs and full CRUD)
+- EXPRESS (7 RESTful routs, full CRUD, One to many Relationship, Method-Override, dotENV)
 - Node.js
-- EJS
-- MONGOOSE
-- MongoDB Atlas 
+- EJS - holding the templates of the website and  used partials 
+- Mongoose - holds the structure of the model 
+- MongoDB - holds data base of my model
 
 ## Link to The Live Site 
 
