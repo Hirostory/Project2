@@ -7,7 +7,7 @@ Gone are the days of endless scrolling and fashion dilemmas. Now, you can effort
 
 ### What is a Wardrobe Capsule
 
-A wardrobe capsule is a small, carefully curated collection of versatile clothing items that mix and match easily to create a variety of outfits. It emphasizes quality over quantity, simplifies dressing choices, and reduces clutter while promoting timeless, classic pieces.
+A capsule wardrobe streamlines your clothing collection to a carefully curated selection of versatile, high-quality pieces that seamlessly harmonize with one another. This deliberate curation eliminates the clutter in your wardrobe, ensuring that every item is utilized to its fullest potential. By investing in timeless, durable clothing that aligns with your personal style, you ultimately save money over time, steering clear of impulsive fashion purchases. This approach not only saves you precious minutes during your daily clothing choices but also contributes to a more sustainable and eco-conscious lifestyle, embracing the notion that less can indeed be more.
 
 ## WireFraming 
 **left side is the planing | right side the end product**
@@ -18,13 +18,27 @@ A wardrobe capsule is a small, carefully curated collection of versatile clothin
 - HTML 
 - CSS 
 - JavaScript
-- EXPRESS (7 RESTful routs and full CRUD)
+- EXPRESS (7 RESTful routs, full CRUD, One to many Relationship, Method-Override, dotENV)
 - Node.js
-- EJS
-- MONGOOSE
-- MongoDB Atlas 
+- EJS - holds the templates of the website and  used partials 
+- Mongoose - holds the structure of the model 
+- MongoDB - holds data base of my model
+
+## Approach 
+
+For this project, I decided to use the One-to-Many relationship by creating a main model that also has four models embedded in that schema. I built my whole website around it, having five routers, five EJS view folders, and five sets of restful routes designated to each of my models. Once that is set, I need to plan how to utilize my routes by directing or redirecting to them to create a unified website. After ensuring all the functionality works, I'll move on to getting my data and working on the design aspects. I opted for a simplistic design since my website is very image-heavy.
 
 ## Link to The Live Site 
 
 Hosted by Heroku 
 https://evening-mountain-25797-5882822564c4.herokuapp.com/stylemate
+
+## Issues and Note to improve 
+
+
+- pathing issues need to be resolve ( some redirect cant identify the object id)
+- want to add a login/register user
+- want to add a hover effect on the images
+- want to add multiple forum which i started doing but didnt end up doing
+- improve the design ( i think its not user friendly yet )
+- want to add more sections ( accessories, trendy, and color story section )
