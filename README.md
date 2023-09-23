@@ -20,9 +20,13 @@ A capsule wardrobe streamlines your clothing collection to a carefully curated s
 - JavaScript
 - EXPRESS (7 RESTful routs, full CRUD, One to many Relationship, Method-Override, dotENV)
 - Node.js
-- EJS - holding the templates of the website and  used partials 
+- EJS - holds the templates of the website and  used partials 
 - Mongoose - holds the structure of the model 
 - MongoDB - holds data base of my model
+
+## Approach 
+
+For this project, I decided to use the One-to-Many relationship by creating a main model that also has four models embedded in that schema. I built my whole website around it, having five routers, five EJS view folders, and five sets of restful routes designated to each of my models. Once that is set, I need to plan how to utilize my routes by directing or redirecting to them to create a unified website. After ensuring all the functionality works, I'll move on to getting my data and working on the design aspects. I opted for a simplistic design since my website is very image-heavy.
 
 ## Link to The Live Site 
 
