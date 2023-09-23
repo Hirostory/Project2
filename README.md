@@ -29,7 +29,7 @@ A capsule wardrobe streamlines your clothing collection to a carefully curated s
 Hosted by Heroku 
 https://evening-mountain-25797-5882822564c4.herokuapp.com/stylemate
 
-##Issues and Note to improve 
+## Issues and Note to improve 
 
 
 - pathing issues need to be resolve ( some redirect cant identify the object id)
