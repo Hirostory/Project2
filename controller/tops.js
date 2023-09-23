@@ -93,7 +93,7 @@ router.post('/:id/add', async (req, res) => {
 //PUT route 
 router.put('/:id', async (req, res) => {
     try { 
-        
+
         const topId = req.params.id
         console.log("this is topId:" + topId)
         const topToUpdate = {
@@ -117,7 +117,7 @@ router.delete('/:id', async (req, res) => {
         const topId = req.params.id
         const top = await Top.findByIdAndDelete(topId)
         console.log("Deleted Top: " + top)
-        res.redirect(`/top`)
+        res.redirect(`/stylemate`)
     } catch (error){
         console.log("ERROR ON DELETE REQUEST: ", error)
         res.status(500).send(error)
